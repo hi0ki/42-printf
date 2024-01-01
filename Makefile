@@ -1,15 +1,16 @@
-SRCS = \
+SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c\
 
-OBJS = $(SRCS:.c=.o)
+
 CC = cc
-CFLAGS = -Wall, -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 NAME = libftprintf.a
+OBJS = $(SRCS:.c=.o)
 
-all:	$(NAME)
+all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) 
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c printf.h
@@ -19,6 +20,7 @@ clean:
 	$(RM) $(OBJS)
 fclean: clean
 	$(RM) $(NAME)
+
 re:	fclean all
 
-.PHONY fclean clean all re
+.PHONY:  clean re fclean all
