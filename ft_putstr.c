@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eel-ansa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 22:35:02 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/01/02 22:35:04 by eel-ansa         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:44:40 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 int ft_putstr(char *str)
 {
-    int i = 0;
+    int i;
 
+    if (!str)
+    {
+        ft_putstr("(null)");
+        return (6);
+    }
+    i = 0;
     while (str[i])
     {
         write(1, &str[i], 1);
         i++;
     }
-    write(1, "\0", 1);
     return (i);
 }
-// int main()
-// {
-//     printf("%d", ft_putstr("hello"));
-// }
+

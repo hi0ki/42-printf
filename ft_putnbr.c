@@ -5,6 +5,8 @@ static int c_nbr (int nbr)
     int i;
 
     i = 0;
+    if (nbr == 0)
+        return (1);
     if (nbr < 0)
         i++;
     while (nbr != 0)
@@ -17,6 +19,7 @@ static int c_nbr (int nbr)
 
 int ft_putnbr(int n)
 {
+    int i = c_nbr(n);
     if (n == -2147483648)
         write(1, "-2147483648", 11);
     else if (n < 0)
@@ -34,9 +37,9 @@ int ft_putnbr(int n)
     {
         ft_putchar(n + 48);
     }
-    return (c_nbr(n));
+    return (i);
 }
 // int main()
 // {
-//     printf("\n%d\n", ft_putnbr(444));
+//     printf("\n%d\n", ft_putnbr(-22));
 // }

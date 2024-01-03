@@ -5,8 +5,8 @@ static int c_nbr (unsigned int nbr)
     int i;
 
     i = 0;
-    if (nbr < 0)
-        i++;
+    if (nbr == 0)
+        return (1);
     while (nbr != 0)
     {
         nbr = nbr / 10;
@@ -17,13 +17,8 @@ static int c_nbr (unsigned int nbr)
 
 int ft_putung (unsigned int n)
 {
-    if (n < 0)
-    {
-        write(1, "-", 1);
-        n *= -1;
-        ft_putung(n);
-    }
-    else if (n > 9)
+    int i = c_nbr(n);
+    if (n > 9)
     {
         ft_putung(n / 10);
         ft_putung(n % 10);
@@ -32,5 +27,5 @@ int ft_putung (unsigned int n)
     {
         ft_putchar(n + 48);
     }
-    return (c_nbr(n));
+    return (i);
 }

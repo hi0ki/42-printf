@@ -6,7 +6,7 @@
 /*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 13:09:18 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/01/03 00:42:08 by eel-ansa         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:43:52 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,17 @@ int ft_printf(const char *format, ...)
             nb += ft_help(format[i], count);
         }
         else
-            nb += write(1, &format[i], 1);
+            nb += ft_putchar(format[i]);
         i++;
     }
     va_end(count);
     return (nb);
 }
-int main()
-{
-    // ft_printf("string :%s \nchar :%c\ndigit :%u\n", "hello", 'c',5);
-    printf("%u\n", -1);
-    ft_printf("%u\n", -1);
-}
+// int main()
+// {
+//     // ft_printf("string :%s \nchar :%c\ndigit :%u\n", "hello", 'c',5);
+//     // printf("%s ", "");
+//     // printf("\n-----------\n");
+//     char *s2 = "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Atirei o pau no gatis, per gatis num morreus.";
+//      printf("\n%d", ft_printf(" %s %s %s %s %s", " - ", "", "4", "", s2));
+// }
