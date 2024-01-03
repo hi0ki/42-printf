@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int c_nbr (int nbr)
+static int c_nbr (unsigned int nbr)
 {
     int i;
 
@@ -15,20 +15,18 @@ static int c_nbr (int nbr)
     return (i);
 }
 
-int ft_putnbr(int n)
+int ft_putung (unsigned int n)
 {
-    if (n == -2147483648)
-        write(1, "-2147483648", 11);
-    else if (n < 0)
+    if (n < 0)
     {
         write(1, "-", 1);
         n *= -1;
-        ft_putnbr(n);
+        ft_putung(n);
     }
     else if (n > 9)
     {
-        ft_putnbr(n / 10);
-        ft_putnbr(n % 10);
+        ft_putung(n / 10);
+        ft_putung(n % 10);
     }
     else
     {
@@ -36,7 +34,3 @@ int ft_putnbr(int n)
     }
     return (c_nbr(n));
 }
-// int main()
-// {
-//     printf("\n%d\n", ft_putnbr(444));
-// }

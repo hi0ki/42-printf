@@ -1,4 +1,4 @@
-SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c\
+SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c ft_printf.c ft_putung.c\
 
 
 CC = cc
