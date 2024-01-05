@@ -6,27 +6,26 @@
 /*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 22:35:02 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/01/03 16:44:40 by eel-ansa         ###   ########.fr       */
+/*   Updated: 2024/01/05 21:39:32 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-    int i;
+	int	i;
 
-    if (!str)
-    {
-        ft_putstr("(null)");
-        return (6);
-    }
-    i = 0;
-    while (str[i])
-    {
-        write(1, &str[i], 1);
-        i++;
-    }
-    return (i);
+	if (!str)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }
-

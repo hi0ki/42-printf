@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putung.c                                        :+:      :+:    :+:   */
+/*   ft_putx.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 21:28:38 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/01/05 21:44:56 by eel-ansa         ###   ########.fr       */
+/*   Created: 2024/01/04 15:55:15 by eel-ansa          #+#    #+#             */
+/*   Updated: 2024/01/05 21:35:08 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	c_nbr(unsigned int nbr)
+int	ft_putx(unsigned int nb, char c)
 {
-	int	i;
+	char	*str;
+	int		cnt;
 
-	i = 0;
-	if (nbr == 0)
-		return (1);
-	while (nbr != 0)
-	{
-		nbr = nbr / 10;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_putung(unsigned int n)
-{
-	int	i;
-
-	i = c_nbr(n);
-	if (n > 9)
-	{
-		ft_putung(n / 10);
-		ft_putung(n % 10);
-	}
+	cnt = 0;
+	if (c == 'x')
+		str = "0123456789abcdef";
 	else
-		ft_putchar(n + 48);
-	return (i);
+		str = "0123456789ABCDEF";
+	if (nb >= 16)
+	{
+		cnt = ft_putx((nb / 16), c);
+	}
+	cnt += ft_putchar(str[nb % 16]);
+	return (cnt);
 }

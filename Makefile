@@ -1,4 +1,4 @@
-SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c ft_printf.c ft_putung.c\
+SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c ft_printf.c ft_putung.c ft_putx.c ft_putp.c ft_printf.c\
 
 
 CC = cc
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS) 
 	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c printf.h
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
