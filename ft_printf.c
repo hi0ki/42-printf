@@ -6,7 +6,7 @@
 /*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 13:09:18 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/01/05 21:49:56 by eel-ansa         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:35:55 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,10 @@ int	ft_printf(const char *format, ...)
 			i++;
 			nb += ft_help(format[i], count);
 		}
-		else
+		else if (format[i] != '%')
 			nb += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(count);
 	return (nb);
 }
-// int main()
-// {
-//     // unsigned int num = 1;
-//     printf("%s");
-//     printf("%s");
-
-//     // printf("\n%p", &num);
-// }

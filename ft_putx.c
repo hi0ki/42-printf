@@ -6,7 +6,7 @@
 /*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:55:15 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/01/05 21:35:08 by eel-ansa         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:21:45 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putx(unsigned int nb, char c)
 		str = "0123456789ABCDEF";
 	if (nb >= 16)
 	{
-		cnt = ft_putx((nb / 16), c);
+		cnt += ft_putx((nb / 16), c);
 	}
 	cnt += ft_putchar(str[nb % 16]);
 	return (cnt);

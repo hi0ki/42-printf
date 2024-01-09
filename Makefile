@@ -1,5 +1,4 @@
-SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c ft_printf.c ft_putung.c ft_putx.c ft_putp.c ft_printf.c\
-
+SRCS = ft_putchar.c ft_putnbr.c ft_putstr.c ft_printf.c ft_putung.c ft_putx.c ft_putp.c\
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
